@@ -1,0 +1,21 @@
+api_version = "2025-01"
+
+[[extensions]]
+name = "t:name"
+handle = "discount-tag"
+type = "function"
+uid = "5a494596-aa59-3b0d-c5b4-7ba8a3772c234180bb9a"
+description = "t:description"
+
+  [[extensions.targeting]]
+  target = "purchase.order-discount.run"
+  input_query = "src/run.graphql"
+  export = "run"
+
+  [extensions.build]
+  command = ""
+  path = "dist/function.wasm"
+
+  [extensions.ui.paths]
+  create = "/"
+  details = "/"

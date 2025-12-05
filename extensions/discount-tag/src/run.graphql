@@ -1,0 +1,14 @@
+query RunInput {
+  cart{
+    lines {
+      merchandise{
+        __typename
+        ... on ProductVariant{
+          product {
+            hasDiscountTag: hasAnyTag(tags:  "Discount")
+          }
+        }
+      }
+    }
+  }
+}
