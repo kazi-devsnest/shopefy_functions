@@ -6,9 +6,12 @@ query RunInput {
         ... on ProductVariant{
           product {
             hasDiscountTag: hasAnyTag(tags:  "Discount")
+            title
+            handle
           }
         }
       }
-    }
+      quantity
+   }
   }
 }
